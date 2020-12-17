@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row">
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-3">
+        <div class="dashboard-stat red-intense">
+            <div class="visual">
+                <i class="fa fa-bar-chart-o"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    @ViewBag.total
+                </div>
+                <div class="desc">
+                    Total Scenario
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+        <label class="control-label col-md-3">User Name</label>
+        <div class="col-md-4">
+            <select class="form-control input-large select2me select-username" data-placeholder="Select...">
+                <option value=""></option>
+                @foreach (XMLParse.Models.Fullname fullname in ViewBag.fullnames)
+                {
+                    <option value="@fullname.UserID" data-count="@fullname.Count">@fullname.Username</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="dashboard-stat green-haze">
+            <div class="visual">
+                <i class="fa fa-shopping-cart"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    0
+                </div>
+                <div class="desc">
+
+                </div>
+            </div>
+            <a class="more" href="javascript:;">
+                View more <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+        <label class="control-label col-md-3">Sample date</label>
+        <div class="col-md-4">
+            <select class="form-control input-large select2me select-sampledate" data-placeholder="Select...">
+                <option value=""></option>
+                @foreach (XMLParse.Models.Sampledate sampledate in ViewBag.sampledates)
+                {
+                    <option value="@sampledate.UserID" data-count="@sampledate.Count">@sampledate.date</option>
+                }
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="dashboard-stat purple-plum">
+            <div class="visual">
+                <i class="fa fa-globe"></i>
+            </div>
+            <div class="details">
+                <div class="number">
+                    0
+                </div>
+                <div class="desc">
+
+                </div>
+            </div>
+            <a class="more" href="javascript:;">
+                View more <i class="m-icon-swapright m-icon-white"></i>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+          <table id="grid"></table>
+    </div>
+</div>
